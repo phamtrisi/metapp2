@@ -1,0 +1,96 @@
+
+<!doctype html>
+
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+      {% block page_title %}Welcome to Met{% endblock %}
+    </title>
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <meta name="author" content="{% block meta_author %}{% endblock %}">
+
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='libs/font-awesome4/css/font-awesome.min.css') }}">
+
+    <!-- LumX -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='libs/lumx/css/lumx.css') }}">
+
+    <!-- App css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+
+
+    {% assets "css_all" %}
+      <link rel="stylesheet" href="{{ ASSET_URL }}">
+    {% endassets %}
+
+    {% block css %}
+      {# Extend this block for custom style on specific pages #}
+    {% endblock %}
+
+  </head>
+
+
+
+
+
+  <body ng-app="metApp" class="{% block body_class %}{% endblock %}">
+    {% block body %}
+    {% with form=form  %}
+    {% include "nav.html" %}
+    {% endwith %}
+
+  <header>{% block header %}{% endblock %}</header>
+  <div class="{% block content_class %}container{% endblock content_class %}">
+
+    <div role="main">
+      <div ui-view></div>
+    </div>
+
+  </div><!-- end container -->
+
+
+
+
+
+  <!-- {% include "footer.html" %}
+   -->
+  <!-- Lodash -->
+  <script type="text/javascript" src="{{ url_for('static', filename='libs/lodash/lodash.min.js') }}"></script>
+
+  <!-- MomentJS -->
+  <script type="text/javascript" src="{{ url_for('static', filename='libs/moment/moment.js') }}"></script>
+
+  <!-- Velocity JS -->
+  <script type="text/javascript" src="{{ url_for('static', filename='libs/velocity/velocity.min.js') }}"></script>
+
+  <!-- Angular -->
+  <script type="text/javascript" src="{{ url_for('static', filename='libs/angular/angular.min.js') }}"></script>
+
+  <!-- AngularUI Router -->
+  <script type="text/javascript" src="{{ url_for('static', filename='libs/angular-ui-router/angular-ui-router.min.js') }}"></script>
+
+  <!-- Lumx -->
+  <script type="text/javascript" src="{{ url_for('static', filename='libs/lumx/js/lumx.min.js') }}"></script>
+
+  <!-- Main app.js -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  {% assets "js_all" %}
+      <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+  {% block js %}{% endblock %}
+  <!-- end scripts -->
+  {% endblock %}
+  </body>
+  
+</html>
+

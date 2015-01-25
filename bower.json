@@ -1,0 +1,11 @@
+{
+  "name": "metapp2",
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "jQuery": "~2.1.0",
+    "angular": "~1.2.1",
+    "lodash": "latest",
+    "velocity": "latest",
+    "moment": "latest"
+  }
+}
