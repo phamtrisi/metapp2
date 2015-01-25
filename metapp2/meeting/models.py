@@ -10,10 +10,10 @@ from metapp2.database import (
     Model,
     ReferenceCol,
     relationship,
-    SurrogatePK,
+    SurrogatePK
 )
 
-class Meeting(Model):
+class Meeting(SurrogatePK, Model):
     __tablename__ = 'meetings'
     date_created = Column(db.DateTime, nullable=False, default=dt.datetime.utcnow)
     start_time = Column(db.DateTime, nullable=False)

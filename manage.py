@@ -7,7 +7,8 @@ from flask.ext.script import Manager, Shell, Server
 from flask.ext.migrate import MigrateCommand
 
 from metapp2.app import create_app
-from metapp2.user.models import User, Meeting
+from metapp2.user.models import User
+from metapp2.meeting.models import Meeting
 from metapp2.settings import DevConfig, ProdConfig
 from metapp2.database import db
 from metapp2 import app
