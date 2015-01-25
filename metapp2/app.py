@@ -12,7 +12,7 @@ from metapp2.extensions import (
     migrate,
     debug_toolbar,
 )
-from metapp2 import user
+from metapp2 import user, meeting
 
 
 def create_app(config_object=ProdConfig):
@@ -41,7 +41,8 @@ def register_extensions(app):
 
 
 def register_blueprints(app):
-    app.register_blueprint(user.views.blueprint)
+    app.register_blueprint(user.views.blueprint, url_prefix="/users")
+    app.register_blueprint(meeting.views.blueprint, url_prefix="/meetings")
     return None
 
 

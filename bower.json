@@ -6,6 +6,7 @@
     "angular": "~1.2.1",
     "lodash": "latest",
     "velocity": "latest",
-    "moment": "latest"
+    "moment": "latest",
+    "reset-css": "latest"
   }
 }
