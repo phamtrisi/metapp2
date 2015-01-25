@@ -6,7 +6,7 @@ from flask.ext.login import current_user, login_user, login_required, logout_use
 
 from metapp2.extensions import login_manager
 from metapp2.user.models import User
-from metapp2.public.forms import LoginForm
+from metapp2.forms import LoginForm
 from metapp2.user.forms import RegisterForm
 from metapp2.utils import flash_errors
 from metapp2.database import db
