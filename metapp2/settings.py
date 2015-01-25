@@ -18,7 +18,7 @@ class ProdConfig(Config):
     """Production configuration."""
     ENV = 'prod'
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = 'mysql://root@localhost/metapp2'  # TODO: Change me
+    SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/metapp2.db'  # TODO: Change me
     DEBUG_TB_ENABLED = False  # Disable Debug toolbar
 
 
@@ -29,7 +29,7 @@ class DevConfig(Config):
     DB_NAME = 'dev.db'
     # Put the db file in project root
     DB_PATH = os.path.join(Config.PROJECT_ROOT, DB_NAME)
-    SQLALCHEMY_DATABASE_URI = 'mysql://root@localhost/metapp2'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/metapp2.db'
     DEBUG_TB_ENABLED = False
     ASSETS_DEBUG = True  # Don't bundle/minify static assets
     CACHE_TYPE = 'simple'  # Can be "memcached", "redis", etc.
