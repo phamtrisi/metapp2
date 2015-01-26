@@ -19,7 +19,7 @@ class Meeting(SurrogatePK, Model):
     start_time = Column(db.DateTime, nullable=False)
     end_time = Column(db.DateTime, nullable=False)
     title = Column(db.String(255), nullable=False)
-    meeting_purpose_id = db.Column(db.Integer, db.ForeignKey('meeting_purpose.id'))
+    meeting_purpose_id = db.Column(db.Integer, db.ForeignKey('meeting_purposes.id'))
 
     def __init__(self, date_created, start_time, end_time, title, meeting_purpose):
         db.Model.__init__(self, date_created=date_created, start_time=start_time, end_time=end_time, title=title, meeting_purpose=meeting_purpose)
