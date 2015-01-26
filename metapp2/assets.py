@@ -2,6 +2,7 @@
 from flask.ext.assets import Bundle, Environment
 
 css = Bundle(
+		"libs/reset-css/reset.css",
     "libs/bootstrap/dist/css/bootstrap.css",
     "css/style.css",
     filters="cssmin",
